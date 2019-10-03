@@ -1,5 +1,5 @@
 FROM knowengdev/base_image:09_19_2017
-LABEL Charles Blatti="blatti@illinois.edu" 
+LABEL Charles Blatti="blatti@illinois.edu"
 
 ENV SRC_LOC /home
 
@@ -7,8 +7,8 @@ ENV SRC_LOC /home
 RUN pip3 install -I knpackage redis
 
 # Clone from github
-RUN git clone https://github.com/KnowEnG/Data_Cleanup_Pipeline.git ${SRC_LOC} 
+RUN git clone https://github.com/KnowEnG/Network_Prepper.git ${SRC_LOC}
 
 # Set up working directory
 WORKDIR ${SRC_LOC}
- 
+
