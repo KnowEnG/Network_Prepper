@@ -9,7 +9,7 @@ from knpackage.toolbox import get_run_parameters, get_run_directory_and_file
 import utils.log_util as logger
 from utils.io_util import IOUtil
 
-MGET_CHUNK = 5000
+MGET_CHUNK = 10000
 KEEP_THR = 0.6
 
 def load_edge_file(file_path):
@@ -192,29 +192,37 @@ def node_desc(rdb, stable_array):
     ret_desc = ["None"] * len(stable_array)
     ret_biotype = ["None"] * len(stable_array)
     st_map_idxs = [idx for idx, st in enumerate(stable_array) if not st.startswith('unmapped')]
-    if st_map_idxs:
-        vals_array = rdb.mget(['::'.join(['stable', stable_array[i], 'type']) for i in st_map_idxs])
-        for i, val in zip(st_map_idxs, vals_array):
+
+    while st_map_idxs:
+        temp_idxs = st_map_idxs[:MGET_CHUNK]
+        st_map_idxs = st_map_idxs[MGET_CHUNK:]
+
+        type_array = rdb.mget(['::'.join(['stable', stable_array[i], 'type'])
+                               for i in temp_idxs])
+        alias_array = rdb.mget(['::'.join(['stable', stable_array[i], 'alias'])
+                                for i in temp_idxs])
+        desc_array = rdb.mget(['::'.join(['stable', stable_array[i], 'desc'])
+                               for i in temp_idxs])
+        btype_array = rdb.mget(['::'.join(['stable', stable_array[i], 'biotype'])
+                                for i in temp_idxs])
+
+        for i, val in zip(temp_idxs, type_array):
             if val is None:
                 continue
             ret_type[i] = val.decode()
-        vals_array = rdb.mget(['::'.join(['stable',
-                                          stable_array[i], 'alias']) for i in st_map_idxs])
-        for i, val in zip(st_map_idxs, vals_array):
+        for i, val in zip(temp_idxs, alias_array):
             if val is None:
                 continue
             ret_alias[i] = val.decode()
-        vals_array = rdb.mget(['::'.join(['stable', stable_array[i], 'desc']) for i in st_map_idxs])
-        for i, val in zip(st_map_idxs, vals_array):
+        for i, val in zip(temp_idxs, desc_array):
             if val is None:
                 continue
             ret_desc[i] = val.decode()
-        vals_array = rdb.mget(['::'.join(['stable',
-                                          stable_array[i], 'biotype']) for i in st_map_idxs])
-        for i, val in zip(st_map_idxs, vals_array):
+        for i, val in zip(temp_idxs, btype_array):
             if val is None:
                 continue
             ret_biotype[i] = val.decode()
+
     return stable_array, ret_type, ret_alias, ret_desc, ret_biotype
 
 
