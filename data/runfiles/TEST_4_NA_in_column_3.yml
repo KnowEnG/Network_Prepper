@@ -1,0 +1,10 @@
+raw_edgefile_full_path:     ./data/infiles/TEST_4_NA_in_column_3.tsv
+results_directory:          ./test/TEST_4_NA_in_column_3/
+make_symmetric:             True            # print out symmetric network with edges for both directions
+network_threshold:          0.6             # fail if fraction of mapped nodes and edges fall below this
+taxonid:                    '9606'          # taxon id of a given gene name
+source_hint:                ''              # hint of looking up ensembl name in Redis database
+redis_credential:                           # knoweng Redis database credentials
+    host: knowredis.knoweng.org
+    password: KnowEnG
+    port: 6379

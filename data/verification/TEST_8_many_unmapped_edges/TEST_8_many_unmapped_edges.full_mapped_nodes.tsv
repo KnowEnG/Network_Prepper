@@ -1,0 +1,6 @@
+ACE	ENSG00000159640	Gene	ACE	angiotensin I converting enzyme [Source:HGNC Symbol;Acc:HGNC:2707]	protein_coding
+ENSG00000005001	ENSG00000005001	Gene	ENSG00000005001	protease, serine 22 [Source:HGNC Symbol;Acc:HGNC:14368]	protein_coding
+FAKEGENE	unmapped-none	None	None	None	None
+FOXP1-AS1	ENSG00000244203	Gene	FOXP1-AS1	FOXP1 antisense RNA 1 [Source:HGNC Symbol;Acc:HGNC:41942]	antisense
+MYC	ENSG00000136997	Gene	MYC	MYC proto-oncogene, bHLH transcription factor [Source:HGNC Symbol;Acc:HGNC:7553]	protein_coding
+	unmapped-none	None	None	None	None

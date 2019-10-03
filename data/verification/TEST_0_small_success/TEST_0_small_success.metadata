@@ -1,0 +1,37 @@
+data:
+  density: 0.6875
+  num_connected_components: -1
+  num_edges: 11
+  num_gene_nodes: 4
+  num_nodes: 4
+  num_prop_nodes: 0
+datasets:
+  conv_date: 2019-10-01 17:40:41
+  orig_file: ./data/infiles/TEST_0_small_success.tsv
+edge_type:
+  bidirectional: 1
+  n1_type: Gene
+  n2_type: Gene
+  score_best: 49.0
+  score_desc: custom score uploaded
+  score_worst: 11.0
+  type_desc: custom uploaded network
+id: TEST_0_small_success
+raw_stats:
+  num_orig_edges: 20
+  num_orig_nodes: 6
+run_params:
+  make_symmetric: true
+  network_threshold: 0.6
+  raw_edgefile_full_path: ./data/infiles/TEST_0_small_success.tsv
+  redis_credential:
+    host: knowredis.knoweng.org
+    password: KnowEnG
+    port: 6379
+  results_directory: ./test/TEST_0_small_success/
+  run_directory: test/TEST_0_small_success
+  run_file: ../../data/runfiles/TEST_0_small_success.yml
+  source_hint: ''
+  taxonid: '9606'
+species:
+  taxon_identifier: '9606'

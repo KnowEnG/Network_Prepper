@@ -1,0 +1,4 @@
+FAIL:
+- 'INFO: Successfully loaded input data: ./data/infiles/TEST_5_negative_in_column_3.tsv
+  with 20 row(s) and 4 column(s)'
+- 'ERROR: Found negative value in column 3'

@@ -1,0 +1,11 @@
+FAIL:
+- 'INFO: Successfully loaded input data: ./data/infiles/TEST_9_sparce_clean_graph.tsv
+  with 20 row(s) and 4 column(s)'
+- 'INFO: Checked raw edgefile has 20 row(s), 4 column(s).'
+- 'INFO: Full mapped edgefile has 20 row(s), 8 column(s).'
+- 'INFO: Full mapped nodefile has 5 row(s), 6 column(s).'
+- 'INFO: 3 mapped nodes out of 5 original.'
+- 'INFO: 15 mapped edges out of 20 original.'
+- 'INFO: mapped edges were made symmetric.'
+- 'INFO: 3 mapped edges after duplicates removed.'
+- 'ERROR: Clean graph is too sparce with only 3 symmetric edges for 3 clean nodes.'

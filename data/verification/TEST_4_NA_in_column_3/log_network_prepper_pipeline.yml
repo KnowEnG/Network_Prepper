@@ -1,0 +1,4 @@
+FAIL:
+- 'INFO: Successfully loaded input data: ./data/infiles/TEST_4_NA_in_column_3.tsv
+  with 20 row(s) and 3 column(s)'
+- 'ERROR: Found NaN in value column 3'

@@ -1,0 +1,3 @@
+FAIL:
+- 'ERROR: Not enough columns in input data ./data/infiles/TEST_3_missing_column_3.tsv.
+  Please provide a valid input data.'

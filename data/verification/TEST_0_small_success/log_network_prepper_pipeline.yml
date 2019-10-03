@@ -1,0 +1,12 @@
+SUCCESS:
+- 'INFO: Successfully loaded input data: ./data/infiles/TEST_0_small_success.tsv with
+  20 row(s) and 4 column(s)'
+- 'INFO: Checked raw edgefile has 20 row(s), 4 column(s).'
+- 'INFO: Full mapped edgefile has 20 row(s), 8 column(s).'
+- 'INFO: Full mapped nodefile has 6 row(s), 6 column(s).'
+- 'INFO: 4 mapped nodes out of 6 original.'
+- 'INFO: 12 mapped edges out of 20 original.'
+- 'INFO: mapped edges were made symmetric.'
+- 'INFO: 11 mapped edges after duplicates removed.'
+- 'INFO: Clean node_map file has 4 row(s), 6 column(s).'
+- 'INFO: Clean edge file has 11 row(s), 3 column(s).'

@@ -1,0 +1,9 @@
+FAIL:
+- 'INFO: Successfully loaded input data: ./data/infiles/TEST_8_many_unmapped_edges.tsv
+  with 20 row(s) and 4 column(s)'
+- 'INFO: Checked raw edgefile has 20 row(s), 4 column(s).'
+- 'INFO: Full mapped edgefile has 20 row(s), 8 column(s).'
+- 'INFO: Full mapped nodefile has 6 row(s), 6 column(s).'
+- 'INFO: 4 mapped nodes out of 6 original.'
+- 'INFO: 11 mapped edges out of 20 original.'
+- 'ERROR: Less than 60.0 of edges have both nodes mapped (only 11 out of 20).'

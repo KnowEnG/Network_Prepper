@@ -1,0 +1,6 @@
+FAIL:
+- 'INFO: Successfully loaded input data: ./data/infiles/TEST_0_small_success.tsv with
+  20 row(s) and 4 column(s)'
+- 'INFO: Checked raw edgefile has 20 row(s), 4 column(s).'
+- 'ERROR: Problem with Redis mapping: knowredis2.knoweng.org : Error -2 connecting
+  to knowredis2.knoweng.org:6379. Name or service not known.'
