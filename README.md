@@ -1,19 +1,18 @@
 
+
 # KnowEnG's Network Prepper
- This is the Knowledge Engine for Genomics (KnowEnG), an NIH BD2K Center of Excellence, Network Prepper tool.
-This tool **prepares** the data of a user-supplied network for subsequent processing by KnowEnG Analytics Platform.
+This is the Knowledge Engine for Genomics (KnowEnG), an NIH BD2K Center of Excellence, Network Prepper tool. This tool **prepares** the data of a user-supplied network for subsequent processing by KnowEnG Analytics Platform.
 
 ## Detailed assumptions and cleanup steps
 
-The original network input file (`raw_edgefile_full_path`) is assumed to be a tab separated file with at least three columns where each row contains information about an edge in the network. 
+The original network input file (`raw_edgefile_full_path`) is assumed to be a tab separated file with at least three columns where each row contains information about an edge in the network.
 The first column is treated as the source nodes of the network, the second column is treated as the target nodes. The third column is required and assumed to have the weights of each edge.  The weights are assumed to be non-null and greater than zero.
 
 The Network Prepper tool begins by checking that the above assumptions are met.  If not, it will FAIL and return an ERROR.
 
-It then uses the redis entity database (`redis_credential`) of the KnowEnG Knowledge Network to map the source and target node identifiers to stable Ensembl identifiers using the species identifier (`taxonid`) and (`source_hint`).
-The tool then checks that a sufficient percentage of entities were successfully mapped (at least `network_threshold` of the original nodes and the original edges).
+It then uses the Redis entity database (`redis_credential`) of the KnowEnG Knowledge Network to map the source and target node identifiers to stable Ensembl identifiers using the species identifier (`taxonid`) and (`source_hint`). The tool then checks that a sufficient percentage of entities were successfully mapped (at least `network_threshold` of the original nodes and the original edges).
 
-Finally, the tool performs some network cleanup.  It makes each edge bi-directional if `make_symmetric` and removes any duplicates. If there are fewer clean edges than clean nodes, the tool FAILs and returns an ERROR.
+Finally, the tool performs some network cleanup.  It makes each edge bi-directional if `make_symmetric` and removes any duplicates. If there are fewer clean edges than clean nodes, the tool FAIL and returns an ERROR.
 
 The outputs of the tools are:
 
